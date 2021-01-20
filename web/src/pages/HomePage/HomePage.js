@@ -4,7 +4,7 @@ import BlogLayout from 'src/layouts/BlogLayout'
 const HomePage = () => {
   return (
     <BlogLayout>
-      <p>Weekly</p>
+      <p>最近更新</p>
       <BlogPostsCell />
     </BlogLayout>
   )

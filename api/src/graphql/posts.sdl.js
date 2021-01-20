@@ -2,6 +2,7 @@ import gql from 'graphql-tag'
 
 export const schema = gql`
   type Post {
+    _id: ID!
     title: String!
     body: String!
   }
@@ -11,6 +12,6 @@ export const schema = gql`
   }
 
   type Query {
-    posts: PostPage
+    posts(size: Int!): PostPage
   }
 `

@@ -3,15 +3,18 @@ import { Link, routes } from '@redwoodjs/router'
 const BlogLayout = ({ children }) => {
   return (
     <>
-      <header>
-        <h1>RedwoodJS+FaunaDB+Vercel 🚀</h1>
-
+      <header style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        <h2>wuw's blog 🚀</h2>
         <nav>
-          <ul>
-            <li>
+          <ul style={{ display: 'flex' }}>
+            <li style={{ width: '80px' }}>
               <Link to={routes.home()}>Home</Link>
             </li>
-            <li>
+            <li style={{ width: '80px' }}>
               <Link to={routes.about()}>About</Link>
             </li>
           </ul>
@@ -19,7 +22,7 @@ const BlogLayout = ({ children }) => {
       </header>
 
       <main>
-        <p>{children}</p>
+        <div>{children}</div>
       </main>
     </>
   )
