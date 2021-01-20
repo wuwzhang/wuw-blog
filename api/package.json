@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@redwoodjs/api": "^0.22.1",
+    "faunadb": "^4.0.0",
     "graphql": "^15.4.0",
     "graphql-request": "^3.4.0"
   }
