@@ -1,0 +1,14 @@
+type Post {
+  title: String!
+  body: String!
+}
+
+type Query {
+  posts: [Post]
+  post(title: String): Post
+}
+
+input CreatePostInput {
+  title: String!
+  body: String!
+}

@@ -16,10 +16,10 @@
     "@redwoodjs/forms": "^0.22.1",
     "@redwoodjs/router": "^0.22.1",
     "@redwoodjs/web": "^0.22.1",
+    "@uiw/react-md-editor": "^2.1.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-markdown": "^5.0.3",
     "styled-components": "^5.2.1",
     "theme-ui": "^0.3.5"
   },

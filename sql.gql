@@ -1,8 +1,0 @@
-type Post {
-  title: String!
-  body: String!
-}
-
-type Query {
-  posts(title: String): [Post]
-}

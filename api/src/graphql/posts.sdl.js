@@ -2,7 +2,7 @@ import gql from 'graphql-tag'
 
 export const schema = gql`
   type Post {
-    _id: ID!
+    id: ID!
     title: String!
     body: String!
   }
@@ -13,5 +13,14 @@ export const schema = gql`
 
   type Query {
     posts(size: Int!): PostPage
+  }
+
+  input CreatePostInput {
+    title: String!
+    body: String!
+  }
+
+  type Mutation {
+    createPost(title: String, body: String): Post!
   }
 `

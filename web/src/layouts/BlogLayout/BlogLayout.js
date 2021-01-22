@@ -17,6 +17,9 @@ const BlogLayout = ({ children }) => {
             <li style={{ width: '80px' }}>
               <Link to={routes.about()}>About</Link>
             </li>
+            <li style={{ width: '80px' }}>
+              <Link to={routes.edit()}>Edit</Link>
+            </li>
           </ul>
         </nav>
       </header>

@@ -4,7 +4,7 @@
 import faunadb from 'faunadb'
 import { GraphQLClient } from 'graphql-request'
 
-const URL = 'fnAD_RdiZxACAamGJrCa06g7ik-B1GYvQUtFflGZ'
+const URL = 'fnAEAI6A76ACBViWi_yhQL_5YZL5qIhDUKAontRR'
 
 export const request = async (query = {}) => {
   const endpoint = 'https://graphql.fauna.com/graphql'
