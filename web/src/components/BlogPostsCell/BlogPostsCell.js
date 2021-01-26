@@ -1,13 +1,16 @@
-import MDEditor from '@uiw/react-md-editor';
+// import MDEditor from '@uiw/react-md-editor'
+
+import { Link, routes } from '@redwoodjs/router'
 
 export const beforeQuery = ({ size }) => {
-  return { variables: { size: size ? parseInt(size) : 3 } }
+  return { variables: { size: size ? parseInt(size) : 5 } }
 }
 
 export const QUERY = gql`
-  query post($size: Int!) {
+  query posts($size: Int!) {
     posts(size: $size) {
       data {
+        id
         title
         body
       }
@@ -23,14 +26,12 @@ export const Success = ({ posts }) => {
   const { data } = posts
   return (
     <>
-      <MDEditor.Markdown source={data[0].body} />
-      {
-        data.slice(1).map((post, ind) => (
-          <div key={ind.toString()}>
-            <p>{post.title}</p>
-          </div>
-        ))
-      }
+      {/* <MDEditor.Markdown source={data[0].body} /> */}
+      {data.map((post, ind) => (
+        <Link key={ind.toString()} to={routes.post({ id: post.id })}>
+          <p>{post.title}</p>
+        </Link>
+      ))}
     </>
   )
 }

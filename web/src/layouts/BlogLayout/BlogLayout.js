@@ -1,33 +1,29 @@
+import { Layout, Menu, Row } from 'antd'
 import { Link, routes } from '@redwoodjs/router'
+
+const { Content, Header } = Layout
 
 const BlogLayout = ({ children }) => {
   return (
-    <>
-      <header style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}>
-        <h2>wuw's blog 🚀</h2>
-        <nav>
-          <ul style={{ display: 'flex' }}>
-            <li style={{ width: '80px' }}>
+    <Layout>
+      <Header>
+        <Row justify="space-between">
+          <section className="color-white font-lg">wuw blog 🚀</section>
+          <Menu theme="dark" mode="horizontal">
+            <Menu.Item>
               <Link to={routes.home()}>Home</Link>
-            </li>
-            <li style={{ width: '80px' }}>
+            </Menu.Item>
+            <Menu.Item>
               <Link to={routes.about()}>About</Link>
-            </li>
-            <li style={{ width: '80px' }}>
-              <Link to={routes.edit()}>Edit</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      <main>
-        <div>{children}</div>
-      </main>
-    </>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to={routes.edit()}>Upload</Link>
+            </Menu.Item>
+          </Menu>
+        </Row>
+      </Header>
+      <Content>{children}</Content>
+    </Layout>
   )
 }
 

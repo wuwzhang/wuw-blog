@@ -1,8 +1,8 @@
-import { render } from '@redwoodjs/testing'
-import { Loading, Empty, Failure, Success } from './BlogPostsCell'
-import { standard } from './BlogPostsCell.mock'
+import { render, screen } from '@redwoodjs/testing'
+import { Loading, Empty, Failure, Success } from './PostDetailCell'
+import { standard } from './PostDetailCell.mock'
 
-describe('BlogPostsCell', () => {
+describe('PostDetailCell', () => {
   it('renders Loading successfully', () => {
     expect(() => {
       render(<Loading />)
@@ -28,7 +28,7 @@ describe('BlogPostsCell', () => {
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success blogPosts={standard().blogPosts} />)
+      render(<Success postDetail={standard().postDetail} />)
     }).not.toThrow()
   })
 })

@@ -1,0 +1,15 @@
+.mt-12 { margin-top: 12px; }
+.mt-24 { margin-top: 24px; }
+.mb-12 { margin-bottom: 12px; }
+.mt-24 { margin-top: 24px; }
+.pw-12 { padding: 0 12px; }
+.pw-24 { padding: 0 24px; }
+.ph-12 { padding: 12px 0; }
+.ph-24 { padding: 24px 0; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.color-white { color: #fafafa }
+.font-xs { font-size: x-small; }
+.font-sm { font-size: small; }
+.font-lg { font-size: large; }
+.font-xl { font-size: xx-large; }

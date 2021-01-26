@@ -17,6 +17,7 @@
     "@redwoodjs/router": "^0.22.1",
     "@redwoodjs/web": "^0.22.1",
     "@uiw/react-md-editor": "^2.1.2",
+    "antd": "^4.10.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

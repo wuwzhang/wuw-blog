@@ -13,6 +13,7 @@ export const schema = gql`
 
   type Query {
     posts(size: Int!): PostPage
+    findPostByID(id: ID!): Post
   }
 
   input CreatePostInput {

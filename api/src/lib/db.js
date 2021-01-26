@@ -23,9 +23,8 @@ export const request = async (query = {}) => {
   }
 }
 
-
 export const client = new faunadb.Client({
-  secret: URL
+  secret: URL,
 })
 
 export const q = faunadb.query

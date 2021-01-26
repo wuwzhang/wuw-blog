@@ -1,10 +1,12 @@
-import { Link, routes } from '@redwoodjs/router'
+import BlogLayout from 'src/layouts/BlogLayout/BlogLayout'
 
 const AboutPage = () => {
   return (
-    <>
-      <p>还没想好写啥~</p>
-    </>
+    <BlogLayout>
+      <section className="pw-12 mt-12">
+        <p>还没想好写啥~</p>
+      </section>
+    </BlogLayout>
   )
 }
 
