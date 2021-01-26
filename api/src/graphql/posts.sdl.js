@@ -12,7 +12,7 @@ export const schema = gql`
   }
 
   type Query {
-    posts(size: Int!): PostPage
+    posts(size: Int!): [Post]
     findPostByID(id: ID!): Post
   }
 

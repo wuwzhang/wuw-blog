@@ -18,7 +18,7 @@ export const posts = async ({ size }) => {
     )
   )
 
-  return ans
+  return ans.data
 }
 
 export const createPost = async ({ title, body }) => {
