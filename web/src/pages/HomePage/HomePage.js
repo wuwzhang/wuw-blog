@@ -1,5 +1,7 @@
 import BlogPostsCell from 'src/components/BlogPostsCell/BlogPostsCell.js'
+import BG from 'src/components/TextBG'
 import BlogLayout from 'src/layouts/BlogLayout/BlogLayout.js'
+
 
 const HomePage = () => {
   return (
@@ -8,6 +10,7 @@ const HomePage = () => {
         <p className="font-lg">最近更新</p>
       </section>
       <BlogPostsCell />
+      <BG />
     </BlogLayout>
   )
 }
