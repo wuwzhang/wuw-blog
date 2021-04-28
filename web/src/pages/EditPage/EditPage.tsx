@@ -1,12 +1,12 @@
 import { useMutation } from '@redwoodjs/web'
 import MDEditor from '@uiw/react-md-editor'
+import { Button, Input, Space } from 'antd'
 import React, { useState } from 'react'
-import { Input, Button, Space } from 'antd'
 import BlogLayout from 'src/layouts/BlogLayout/BlogLayout'
 
 const CREATE_POST_MUTATION = gql`
-  mutation CreatePostMutation($title: String, $body: String) {
-    createPost(title: $title, body: $body) {
+  mutation CreatePostMutation($title: String, $body: String, $tag: String) {
+    createPost(title: $title, body: $body, tag: $tag) {
       id
     }
   }
@@ -19,7 +19,7 @@ const EditPage = () => {
   const [createPost] = useMutation(CREATE_POST_MUTATION)
 
   const onSubmit = async () => {
-    createPost({ variables: { title, body: value } })
+    createPost({ variables: { title, body: value, tag: '道德经' } })
   }
 
   return (

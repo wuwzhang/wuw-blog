@@ -12,6 +12,7 @@ export const QUERY = gql`
       id
       title
       body
+      tag
     }
   }
 `
@@ -21,14 +22,14 @@ export const Empty = () => <div>Empty</div>
 export const Failure = ({ error }) => <div>Error: {error.message}</div>
 
 export const Success = ({ posts }) => {
-  console.log(posts)
   return (
     <>
-      {/* <MDEditor.Markdown source={data[0].body} /> */}
       {Array.isArray(posts)
         ? posts.map((post, ind) => (
             <Link key={ind.toString()} to={routes.post({ id: post.id })}>
-              <p>{post.title}</p>
+              <p>
+                {post.title} - {post.tag}
+              </p>
             </Link>
           ))
         : null}

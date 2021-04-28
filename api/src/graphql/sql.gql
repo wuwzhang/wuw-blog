@@ -1,14 +1,21 @@
 type Post {
   title: String!
   body: String!
+  tag: String!
+  ind: Int
 }
 
 type Query {
   posts: [Post]
   post(title: String): Post
+  allPosts: [Post!]! @index(name: "all_posts")
+  postByTag(tag: String): Post
+  postByTitle(title: String): Post
 }
 
 input CreatePostInput {
   title: String!
   body: String!
+  tag: String!
+  ind: Int
 }

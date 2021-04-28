@@ -1,5 +1,5 @@
-import { render, screen } from '@redwoodjs/testing'
-import { Loading, Empty, Failure, Success } from './PostDetailCell'
+import { render } from '@redwoodjs/testing'
+import { Empty, Failure, Loading, Success } from './PostDetailCell'
 import { standard } from './PostDetailCell.mock'
 
 describe('PostDetailCell', () => {

@@ -5,6 +5,7 @@ export const schema = gql`
     id: ID!
     title: String!
     body: String!
+    tag: String!
   }
 
   type PostPage {
@@ -14,14 +15,16 @@ export const schema = gql`
   type Query {
     posts(size: Int!): [Post]
     findPostByID(id: ID!): Post
+    findPostsByTag(tag: String!): Post
   }
 
   input CreatePostInput {
     title: String!
     body: String!
+    tag: String!
   }
 
   type Mutation {
-    createPost(title: String, body: String): Post!
+    createPost(title: String, body: String, tag: String): Post!
   }
 `

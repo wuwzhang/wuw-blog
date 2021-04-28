@@ -4,7 +4,7 @@
 import faunadb from 'faunadb'
 import { GraphQLClient } from 'graphql-request'
 
-const URL = 'fnAEAI6A76ACBViWi_yhQL_5YZL5qIhDUKAontRR'
+const URL = 'fnAEHvfgBMACB4zRRBGqwGGNVPX3lzQTGsk_wIT1'
 
 export const request = async (query = {}) => {
   const endpoint = 'https://graphql.fauna.com/graphql'
@@ -18,7 +18,6 @@ export const request = async (query = {}) => {
   try {
     return await graphQLClient.request(query)
   } catch (error) {
-    console.log(error)
     return error
   }
 }

@@ -1,4 +1,4 @@
-import { q, client } from 'src/lib/db'
+import { client, q } from 'src/lib/db'
 
 export const posts = async ({ size }) => {
   const ans = await client.query(
@@ -11,6 +11,7 @@ export const posts = async ({ size }) => {
           {
             id: q.Select(['ref', 'id'], q.Var('posts')),
             title: q.Select(['data', 'title'], q.Var('posts')),
+            tag: q.Select(['data', 'tag'], q.Var('posts')),
             body: q.Select(['data', 'body'], q.Var('posts')),
           }
         )
@@ -21,14 +22,19 @@ export const posts = async ({ size }) => {
   return ans.data
 }
 
-export const createPost = async ({ title, body }) => {
+export const createPost = async ({ title, body, tag }) => {
   const ans = await client.query(
-    q.Create(q.Collection('Post'), { data: { title, body } })
+    q.Create(q.Collection('Post'), { data: { title, body, tag } })
   )
   return ans
 }
 
 export const findPostByID = async ({ id }) => {
   const ans = await client.query(q.Get(q.Ref(q.Collection('Post'), id)))
+  return ans.data
+}
+
+export const findPostsByTas = async ({ tag }) => {
+  const ans = await client.query(q.Get(q.Ref(q.Collection('Post'), tag)))
   return ans.data
 }
