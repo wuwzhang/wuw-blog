@@ -254,7 +254,7 @@ export const Demo11 = styled.div`
 `
 export const Demo12 = styled.div`
   p {
-    color: #0000;
+    color: #0000 !important;
     background: linear-gradient(45deg, #3f8, #38f, #ff269b);
     background-position: center center;
     -webkit-background-clip: text;
@@ -311,11 +311,12 @@ export const Demo13 = styled.div`
 export const Demo14 = styled.div`
   p {
     position: relative;
-    color: #0000;
+    color: #0000 !important;
     background-color: #38f;
     -webkit-background-clip: text;
     background-clip: text;
     &::after {
+      color: #0000;
       position: absolute;
       top: 0;
       left: 0;
@@ -368,6 +369,7 @@ export const Demo15 = styled.div`
     transition: 0.5s linear;
     -webkit-text-stroke: 2px #38f;
     &:hover {
+      color: #0000;
       cursor: pointer;
       background-size: 100%;
     }
