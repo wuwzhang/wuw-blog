@@ -20,6 +20,7 @@ export const Container = styled.section`
       font-family: 'Krona One', sans-serif;
       font-size: 3em;
       color: #666;
+      white-space: nowrap;
     }
     &:nth-child(n + 7) {
       background: #000;
@@ -137,15 +138,26 @@ export const Demo6 = styled.div`
   }
 `
 export const Demo7 = styled.div`
-  color: #fff;
   p {
     margin: auto;
-    color: #fff;
     cursor: pointer;
-    transition: 0.2s;
-    &:hover {
-      text-shadow: 0 0 5px #38f, 0 0 10px #38f, 0 0 20px #38f, 0 0 40px #38f,
-        0 0 100px #38f;
+    color: #cce7f8 !important;
+    font-size: 2.5rem;
+    animation: shining 0.1s alternate infinite;
+  }
+
+  @keyframes shining {
+    from {
+      text-shadow: 0 0 6px rgba(182, 211, 207, 0.9),
+        0 0 30px rgba(182, 211, 207, 0.3), 0 0 12px rgba(51, 136, 255, 0.5),
+        0 0 21px rgba(51, 136, 255, 0.9), 0 0 34px rgba(51, 136, 255, 0.8),
+        0 0 54px rgba(51, 136, 255, 0.9);
+    }
+    to {
+      text-shadow: 0 0 6px rgba(182, 211, 207, 1),
+        0 0 30px rgba(182, 211, 207, 0.4), 0 0 12px rgba(51, 136, 255, 0.6),
+        0 0 22px rgba(51, 136, 255, 0.8), 0 0 38px rgba(51, 136, 255, 0.9),
+        0 0 60px rgba(51, 136, 255, 1);
     }
   }
 `
@@ -156,19 +168,21 @@ export const Demo8 = styled.div`
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     transition: all 0.5s;
-    &:hover {
-      color: #fff;
-      -webkit-animation: neon 1.5s ease-in-out infinite alternate;
-      animation: neon 1.5s ease-in-out infinite alternate;
-    }
+    animation: neon 1.5s ease-in-out infinite alternate;
   }
 
   @keyframes neon {
-    from {
+    0% {
+      color: #38f;
+      text-decoration: none;
+    }
+    50% {
+      color: #fff;
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #38f,
         0 0 70px #38f, 0 0 80px #38f, 0 0 100px #38f, 0 0 150px #38f;
     }
-    to {
+    80% {
+      color: #fff;
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #38f,
         0 0 35px #38f, 0 0 40px #38f, 0 0 50px #38f, 0 0 75px #38f;
     }
@@ -176,10 +190,9 @@ export const Demo8 = styled.div`
 `
 export const Demo9 = styled.div`
   p {
-    cursor: pointer;
     background: none;
-    &:hover span {
-      animation: flicker 1s linear forwards;
+    span {
+      animation: flicker 1s linear infinite;
       &:nth-child(1) {
         animation-delay: 0.2s;
       }
@@ -215,24 +228,36 @@ export const Demo9 = styled.div`
   }
 `
 export const Demo10 = styled.div`
+  width: 100%;
   height: 100%;
-  background: repeating-radial-gradient(
-    circle at 200% 200%,
-    #000 0,
-    #000 30px,
-    #fff 30px,
-    #fff 50px
-  );
-  &:before {
+  overflow: hidden;
+  filter: contrast(20);
+  p {
+    font-size: 1.95rem !important;
     position: absolute;
     top: 50%;
     left: 50%;
-    font-size: 2rem;
-    color: #fff;
-    content: 'Hello Word';
-    transform: translate(-50%, -50%);
-    -webkit-mix-blend-mode: difference;
-    mix-blend-mode: difference;
+    color: #fff !important;
+    letter-spacing: -0.5rem;
+    transform: translate3d(-50%, -50%, 0);
+    animation: letterspacing 5s infinite alternate ease-in-out;
+  }
+
+  @keyframes letterspacing {
+    0% {
+      letter-spacing: -1rem;
+      filter: blur(0.3rem);
+    }
+
+    50% {
+      filter: blur(0.5rem);
+    }
+
+    100% {
+      color: #fff;
+      letter-spacing: 0.5rem;
+      filter: blur(0);
+    }
   }
 `
 export const Demo11 = styled.div`
@@ -311,7 +336,7 @@ export const Demo13 = styled.div`
 export const Demo14 = styled.div`
   p {
     position: relative;
-    color: #0000 !important;
+    color: #38f !important;
     background-color: #38f;
     -webkit-background-clip: text;
     background-clip: text;
@@ -362,15 +387,25 @@ export const Demo14 = styled.div`
 export const Demo15 = styled.div`
   p {
     position: relative;
-    color: #0000;
+    color: #0000 !important;
     background: linear-gradient(#38f 0 100%) left / 0 no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     transition: 0.5s linear;
     -webkit-text-stroke: 2px #38f;
-    &:hover {
-      color: #0000;
-      cursor: pointer;
+    animation: shine 5s alternate infinite;
+  }
+  @keyframes shine {
+    0% {
+      background-size: 0%;
+    }
+    40% {
+      background-size: 100%;
+    }
+    80% {
+      background-size: 0%;
+    }
+    100% {
       background-size: 100%;
     }
   }

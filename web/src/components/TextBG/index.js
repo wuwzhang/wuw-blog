@@ -63,7 +63,9 @@ const BG = () => (
         <span>d</span>
       </p>
     </Demo9>
-    <Demo10 />
+    <Demo10>
+      <p>Hello World</p>
+    </Demo10>
     <Demo11>
       <p>Hello World</p>
     </Demo11>
