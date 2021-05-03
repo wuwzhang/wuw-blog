@@ -13,8 +13,8 @@ const CREATE_POST_MUTATION = gql`
 `
 
 const EditPage = () => {
-  const [title, setTitle] = useState<string>('')
-  const [value, setValue] = useState<string>('**Hello world!!!**')
+  const [title, setTitle] = useState('')
+  const [value, setValue] = useState('**Hello world!!!**')
 
   const [createPost] = useMutation(CREATE_POST_MUTATION)
 

@@ -2,30 +2,59 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
   width: 100%;
-  height: 1000px;
+  height: 100%;
   display: grid;
-  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
-  grid-template-rows: 200px 200px 200px;
-  grid-row-gap: 0px;
-  grid-column-gap: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  scroll-snap-type: y mandatory;
+  &::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
   div {
+    width: calc(100% / 3);
+    height: 200px;
+    scroll-snap-align: start;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px 7px;
+    min-height: 200px;
     background: #fafafa;
     p {
       margin: auto;
       font-family: 'Krona One', sans-serif;
       font-size: 3em;
+      font-weight: 600;
       color: #666;
       white-space: nowrap;
     }
-    &:nth-child(n + 7) {
+    &:nth-child(n + 10) {
       background: #000;
+      section {
+        color: #fff9;
+      }
+    }
+    section {
+      font-size: 12px;
+      color: #3339;
     }
   }
+`
+
+export const Tip = styled.section`
+  ${(props) =>
+    props.show
+      ? `
+      position: absolute;
+  left: 0;
+  top: 0;
+  background: #dfdfdf4f;
+  padding: 2px 3px;
+  `
+      : ` display: none `};
 `
 
 export const Demo1 = styled.div`
@@ -59,7 +88,7 @@ export const Demo2 = styled.div`
       z-index: 0;
       color: transparent;
       white-space: nowrap;
-      content: ${(props) => props.data};
+      content: 'Hello World Hello World';
       text-decoration-line: underline;
       text-decoration-style: wavy;
       text-decoration-color: #38f;
@@ -336,12 +365,11 @@ export const Demo13 = styled.div`
 export const Demo14 = styled.div`
   p {
     position: relative;
-    color: #38f !important;
+    color: #0000 !important;
     background-color: #38f;
     -webkit-background-clip: text;
     background-clip: text;
     &::after {
-      color: #0000;
       position: absolute;
       top: 0;
       left: 0;
@@ -372,15 +400,15 @@ export const Demo14 = styled.div`
       -webkit-background-clip: text;
       background-clip: text;
       background-size: 150% 100%;
-      animation: shine 5s infinite linear;
+      animation: shine-1 3s linear infinite;
     }
-  }
-  @keyframes shine {
-    0% {
-      background-position: 50% 0;
-    }
-    100% {
-      background-position: -190% 0;
+    @keyframes shine-1 {
+      0% {
+        background-position: 50% 0;
+      }
+      100% {
+        background-position: -190% 0;
+      }
     }
   }
 `
@@ -393,20 +421,134 @@ export const Demo15 = styled.div`
     background-clip: text;
     transition: 0.5s linear;
     -webkit-text-stroke: 2px #38f;
-    animation: shine 5s alternate infinite;
+    animation: shine 3s linear infinite;
   }
   @keyframes shine {
     0% {
       background-size: 0%;
     }
-    40% {
-      background-size: 100%;
-    }
-    80% {
-      background-size: 0%;
-    }
     100% {
       background-size: 100%;
     }
+  }
+`
+export const Demo16 = styled.div`
+  p {
+    color: #131313 !important;
+    text-shadow: 1px -1px 0 #767676, -1px 2px 1px #787777, -2px 4px 1px #828181,
+      -3px 6px 1px #8f8e8d, -4px 8px 1px #9e9c9c, -5px 10px 1px #adabab,
+      -6px 12px 1px #bcbbba, -7px 14px 1px #cbc9c8, -8px 16px 1px #d8d6d5,
+      -9px 18px 1px #e2e0df;
+  }
+`
+
+export const Demo17 = styled.div`
+  p {
+    color: #e0dfdc !important;
+    letter-spacing: 0.1em;
+    text-shadow: 0 -1px 0 #ffffff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c,
+      0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424,
+      0 7px 0 #222222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c;
+  }
+`
+export const Demo18 = styled.div`
+  p {
+    color: #66757f !important;
+    text-shadow: -6px 6px 0px #8899a6, -12px 12px 0px #ccd6dd,
+      -18px 18px 0px #e1e8ed;
+  }
+`
+export const Demo19 = styled.div`
+  svg {
+    width: calc(100vw / 3);
+    height: 180px;
+    text {
+      animation: stroke 5s infinite alternate;
+      font-size: 3rem;
+      font-weight: 500;
+    }
+  }
+
+  @keyframes stroke {
+    0% {
+      fill: rgba(72, 138, 20, 0);
+      stroke: #38f;
+      stroke-dashoffset: 25%;
+      stroke-dasharray: 0 50%;
+      stroke-width: 0.8;
+    }
+    50% {
+      fill: rgba(72, 138, 20, 0);
+      stroke: #38f;
+      stroke-width: 1.5;
+    }
+    70% {
+      fill: rgba(72, 138, 20, 0);
+      stroke: #38f;
+      stroke-width: 2;
+    }
+    90%,
+    100% {
+      fill: #38f;
+      stroke: rgba(54, 95, 160, 0);
+      stroke-dashoffset: -20%;
+      stroke-dasharray: 50% 0;
+      stroke-width: 0;
+    }
+  }
+`
+const url = 'https://images7.alphacoders.com/410/thumb-1920-410661.jpg'
+export const Demo20 = styled.div`
+  p {
+    color: #0000 !important;
+    background: url(${url}) no-repeat center center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+`
+
+export const Demo23 = styled.div`
+  color: #202020;
+  background-color: #2d2d2d;
+  letter-spacing: 0.1em;
+  text-shadow: -1px -1px 1px #111111, 2px 2px 1px #363636;
+`
+
+export const Demo22 = styled.div`
+  video,
+  p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  video {
+    object-fit: cover;
+  }
+
+  p {
+    background: #fff !important;
+    mix-blend-mode: screen;
+    text-align: center;
+  }
+`
+export const Demo21 = styled.div`
+  p {
+    background-color: #333;
+    background-image: linear-gradient(
+      45deg,
+      transparent 45%,
+      hsla(48, 20%, 90%, 1) 45%,
+      hsla(48, 20%, 90%, 1) 55%,
+      transparent 0
+    );
+    background-size: 0.05em 0.05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #111;
   }
 `

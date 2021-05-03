@@ -15,7 +15,7 @@ export const schema = gql`
   type Query {
     posts(size: Int!): [Post]
     findPostByID(id: ID!): Post
-    findPostsByTag(tag: String!): Post
+    # findPostsByTag(tag: String!): Post
   }
 
   input CreatePostInput {
