@@ -14,7 +14,6 @@ const {
   Create,
   Ref,
   Join,
-  Union,
 } = q
 
 export const posts = async ({ size, catalog }) => {

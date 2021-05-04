@@ -1,6 +1,7 @@
+import { Col, Row } from 'antd'
 import styled from 'styled-components'
 
-export const Container = styled.section`
+export const Container = styled(Row)`
   width: 100%;
   height: 100%;
   display: grid;
@@ -13,7 +14,6 @@ export const Container = styled.section`
     display: none; /* Chrome Safari */
   }
   div {
-    width: calc(100% / 3);
     height: 200px;
     scroll-snap-align: start;
     position: relative;
@@ -57,7 +57,7 @@ export const Tip = styled.section`
       : ` display: none `};
 `
 
-export const Demo1 = styled.div`
+export const Demo1 = styled(Col)`
   @property --offset {
     syntax: '<length>';
     inherits: false;
@@ -75,7 +75,7 @@ export const Demo1 = styled.div`
     }
   }
 `
-export const Demo2 = styled.div`
+export const Demo2 = styled(Col)`
   p {
     position: relative;
     overflow: hidden;
@@ -103,7 +103,7 @@ export const Demo2 = styled.div`
     }
   }
 `
-export const Demo3 = styled.div`
+export const Demo3 = styled(Col)`
   p span {
     &:first-child {
       -webkit-text-emphasis: circle #3f8;
@@ -117,7 +117,7 @@ export const Demo3 = styled.div`
     }
   }
 `
-export const Demo4 = styled.div`
+export const Demo4 = styled(Col)`
   a {
     color: #38f;
     background: linear-gradient(90deg, #38f 50%, #0000 50%, #0000 1px);
@@ -132,7 +132,7 @@ export const Demo4 = styled.div`
     }
   }
 `
-export const Demo5 = styled.div`
+export const Demo5 = styled(Col)`
   a {
     color: #38f;
     cursor: pointer;
@@ -149,7 +149,7 @@ export const Demo5 = styled.div`
     }
   }
 `
-export const Demo6 = styled.div`
+export const Demo6 = styled(Col)`
   a {
     color: #38f;
     cursor: pointer;
@@ -166,7 +166,7 @@ export const Demo6 = styled.div`
     }
   }
 `
-export const Demo7 = styled.div`
+export const Demo7 = styled(Col)`
   p {
     margin: auto;
     cursor: pointer;
@@ -190,7 +190,7 @@ export const Demo7 = styled.div`
     }
   }
 `
-export const Demo8 = styled.div`
+export const Demo8 = styled(Col)`
   p a {
     color: #38f;
     text-decoration: none;
@@ -217,7 +217,7 @@ export const Demo8 = styled.div`
     }
   }
 `
-export const Demo9 = styled.div`
+export const Demo9 = styled(Col)`
   p {
     background: none;
     span {
@@ -256,7 +256,7 @@ export const Demo9 = styled.div`
     }
   }
 `
-export const Demo10 = styled.div`
+export const Demo10 = styled(Col)`
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -289,7 +289,7 @@ export const Demo10 = styled.div`
     }
   }
 `
-export const Demo11 = styled.div`
+export const Demo11 = styled(Col)`
   p {
     -webkit-mask: radial-gradient(circle at 50% 0, #000, #0000 20%, #0000 0);
     mask: radial-gradient(circle at 50% 0, #000, #0000 20%, #0000 0);
@@ -306,7 +306,7 @@ export const Demo11 = styled.div`
     }
   }
 `
-export const Demo12 = styled.div`
+export const Demo12 = styled(Col)`
   p {
     color: #0000 !important;
     background: linear-gradient(45deg, #3f8, #38f, #ff269b);
@@ -322,7 +322,7 @@ export const Demo12 = styled.div`
     }
   }
 `
-export const Demo13 = styled.div`
+export const Demo13 = styled(Col)`
   overflow: hidden;
   p {
     position: relative;
@@ -362,7 +362,7 @@ export const Demo13 = styled.div`
     }
   }
 `
-export const Demo14 = styled.div`
+export const Demo14 = styled(Col)`
   p {
     position: relative;
     color: #0000 !important;
@@ -412,7 +412,7 @@ export const Demo14 = styled.div`
     }
   }
 `
-export const Demo15 = styled.div`
+export const Demo15 = styled(Col)`
   p {
     position: relative;
     color: #0000 !important;
@@ -432,7 +432,7 @@ export const Demo15 = styled.div`
     }
   }
 `
-export const Demo16 = styled.div`
+export const Demo16 = styled(Col)`
   p {
     color: #131313 !important;
     text-shadow: 1px -1px 0 #767676, -1px 2px 1px #787777, -2px 4px 1px #828181,
@@ -442,7 +442,7 @@ export const Demo16 = styled.div`
   }
 `
 
-export const Demo17 = styled.div`
+export const Demo17 = styled(Col)`
   p {
     color: #e0dfdc !important;
     letter-spacing: 0.1em;
@@ -451,14 +451,14 @@ export const Demo17 = styled.div`
       0 7px 0 #222222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c;
   }
 `
-export const Demo18 = styled.div`
+export const Demo18 = styled(Col)`
   p {
     color: #66757f !important;
     text-shadow: -6px 6px 0px #8899a6, -12px 12px 0px #ccd6dd,
       -18px 18px 0px #e1e8ed;
   }
 `
-export const Demo19 = styled.div`
+export const Demo19 = styled(Col)`
   svg {
     width: calc(100vw / 3);
     height: 180px;
@@ -498,7 +498,7 @@ export const Demo19 = styled.div`
   }
 `
 const url = 'https://images7.alphacoders.com/410/thumb-1920-410661.jpg'
-export const Demo20 = styled.div`
+export const Demo20 = styled(Col)`
   p {
     color: #0000 !important;
     background: url(${url}) no-repeat center center;
@@ -508,14 +508,14 @@ export const Demo20 = styled.div`
   }
 `
 
-export const Demo23 = styled.div`
+export const Demo23 = styled(Col)`
   color: #202020;
   background-color: #2d2d2d;
   letter-spacing: 0.1em;
   text-shadow: -1px -1px 1px #111111, 2px 2px 1px #363636;
 `
 
-export const Demo22 = styled.div`
+export const Demo22 = styled(Col)`
   video,
   p {
     position: absolute;
@@ -536,7 +536,7 @@ export const Demo22 = styled.div`
     text-align: center;
   }
 `
-export const Demo21 = styled.div`
+export const Demo21 = styled(Col)`
   p {
     background-color: #333;
     background-image: linear-gradient(

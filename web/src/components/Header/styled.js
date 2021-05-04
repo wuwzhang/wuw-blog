@@ -42,6 +42,7 @@ export const MenuItem = styled.li`
   transition: 0.2s all linear;
   cursor: pointer;
   list-style: none;
+  white-space: nowrap;
   &::before {
     content: '';
     position: absolute;

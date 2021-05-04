@@ -18,7 +18,7 @@ const BlockPage = () => {
   return (
     <BlogLayout>
       <Row style={{ height: '100%' }}>
-        <Col span={4}>
+        <Col xs={0} md={4}>
           <ItemC>
             {ITEMS.map((v) => (
               <Item
@@ -31,7 +31,7 @@ const BlockPage = () => {
             ))}
           </ItemC>
         </Col>
-        <Col span={20} style={{ height: '100%' }}>
+        <Col xs={24} md={20} style={{ height: '100%' }}>
           <PlaceHolder>{ITEM_OBJ[checked].com()}</PlaceHolder>
         </Col>
       </Row>
