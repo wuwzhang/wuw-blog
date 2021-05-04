@@ -2,13 +2,13 @@
 
 import { Link, routes } from '@redwoodjs/router'
 
-export const beforeQuery = ({ size }) => {
-  return { variables: { size: size ? parseInt(size) : 5 } }
+export const beforeQuery = ({ size, catalog }) => {
+  return { variables: { size: size ? parseInt(size) : 5, catalog } }
 }
 
 export const QUERY = gql`
-  query posts($size: Int!) {
-    posts(size: $size) {
+  query posts($size: Int!, $catalog: String!) {
+    posts(size: $size, catalog: $catalog) {
       id
       title
       body

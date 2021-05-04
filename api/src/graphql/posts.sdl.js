@@ -13,18 +13,18 @@ export const schema = gql`
   }
 
   type Query {
-    posts(size: Int!): [Post]
+    posts(size: Int!, catalog: String!): [Post]
     findPostByID(id: ID!): Post
-    # findPostsByTag(tag: String!): Post
   }
 
   input CreatePostInput {
     title: String!
     body: String!
     tag: String!
+    catalog: String
   }
 
   type Mutation {
-    createPost(title: String, body: String, tag: String): Post!
+    createPost(title: String, body: String, tag: String, catalog: String): Post!
   }
 `

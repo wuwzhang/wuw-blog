@@ -7,7 +7,7 @@ const HomePage = () => {
     <BlogLayout>
       <section className="mt-12 pw-24" style={{ height: 420 }}>
         <p className="font-lg">最近更新</p>
-        <BlogPostsCell />
+        <BlogPostsCell catalog="经典" size={10} />
       </section>
       <section style={{ height: 'calc(100% - 432px)' }}>
         <BG />
