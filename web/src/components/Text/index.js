@@ -24,7 +24,7 @@ import {
   Demo21,
   Tip,
 } from './styled'
-const BG = ({ show = false }) => (
+const Text = ({ show = false }) => (
   <Container>
     <Demo1 xs={24} md={8}>
       <p>Hello World</p>
@@ -133,4 +133,4 @@ const BG = ({ show = false }) => (
   </Container>
 )
 
-export default BG
+export default Text

@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export const Container = styled(Row)`
   width: 100%;
   height: 100%;
-  display: grid;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
