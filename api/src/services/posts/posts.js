@@ -44,9 +44,9 @@ export const posts = async ({ size, catalog }) => {
   return ans.data
 }
 
-export const createPost = async ({ title, body, tag, catalog }) => {
+export const createPost = async ({ title, body, tag, catalog, ind }) => {
   const ans = await client.query(
-    Create(Collection('Post'), { data: { title, body, tag, catalog } })
+    Create(Collection('Post'), { data: { title, body, tag, catalog, ind } })
   )
   return ans
 }

@@ -6,6 +6,7 @@ export const schema = gql`
     title: String!
     body: String!
     tag: String!
+    ind: Int
   }
 
   type PostPage {
@@ -22,9 +23,16 @@ export const schema = gql`
     body: String!
     tag: String!
     catalog: String
+    ind: Int
   }
 
   type Mutation {
-    createPost(title: String, body: String, tag: String, catalog: String): Post!
+    createPost(
+      title: String
+      body: String
+      tag: String
+      catalog: String
+      ind: Int
+    ): Post!
   }
 `

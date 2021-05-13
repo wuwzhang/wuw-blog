@@ -13,3 +13,15 @@
 .font-sm { font-size: small; }
 .font-lg { font-size: large; }
 .font-xl { font-size: xx-large; }
+
+.ant-card-body .wmde-markdown h1,
+.ant-card-body .wmde-markdown h2 {
+  display: none;
+}
+.ant-card-body .wmde-markdown h3 {
+  margin-top: 0px;
+}
+.ant-card-body .wmde-markdown h3,
+.ant-card-body .wmde-markdown p {
+  font-size: 12px;
+}

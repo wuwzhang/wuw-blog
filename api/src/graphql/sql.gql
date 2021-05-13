@@ -2,6 +2,7 @@ type Post {
   title: String!
   body: String!
   tag: String!
+  catalog: String
   ind: Int
 }
 
@@ -17,5 +18,6 @@ input CreatePostInput {
   title: String!
   body: String!
   tag: String!
+  catalog: String
   ind: Int
 }
