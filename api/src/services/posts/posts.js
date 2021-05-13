@@ -16,6 +16,7 @@ const {
   Join,
 } = q
 
+// eslint-disable-next-line no-unused-vars
 export const posts = async ({ size, catalog }) => {
   const ans = await client.query(
     Map(
@@ -24,7 +25,7 @@ export const posts = async ({ size, catalog }) => {
           Match(Index('post_search_by_catalog'), catalog),
           Index('post_sort_by_ind_desc')
         ),
-        { size }
+        // { size }
       ),
       Lambda(
         ['ind', 'ref'],
@@ -34,6 +35,7 @@ export const posts = async ({ size, catalog }) => {
             id: Select(['ref', 'id'], Var('posts')),
             title: Select(['data', 'title'], Var('posts')),
             tag: Select(['data', 'tag'], Var('posts')),
+            catalog: Select(['data', 'catalog'], Var('posts')),
             body: Select(['data', 'body'], Var('posts')),
           }
         )

@@ -6,6 +6,7 @@ export const schema = gql`
     title: String!
     body: String!
     tag: String!
+    catalog: String
     ind: Int
   }
 
