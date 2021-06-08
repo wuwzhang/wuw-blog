@@ -22,6 +22,7 @@
   margin-top: 0px;
 }
 .ant-card-body .wmde-markdown h3,
+.ant-card-body .wmde-markdown li,
 .ant-card-body .wmde-markdown p {
-  font-size: 12px;
+  font-size: 12px !important;
 }

@@ -9,6 +9,7 @@ const Header = () => {
   const ROUTER = [
     { key: 'home', label: '首页' },
     { key: 'weekly', label: '资讯' },
+    { key: 'collect', label: '合集' },
     { key: 'block', label: '物料' },
     { key: 'books', label: '经典' },
     { key: 'about', label: '关于' },

@@ -1,0 +1,7 @@
+- [TypeScript官网](https://www.tslang.cn/docs/home.html)
+- [TypeScript，初次见面，请多指教](https://zhuanlan.zhihu.com/p/57958328)
+- [一文读懂 TypeScript 泛型及应用（ 7.8K字](https://juejin.cn/post/6844904184894980104)
+- [TypeScript Handbook（中文版）](https://www.runoob.com/manual/gitbook/TypeScript/_book/index.html)
+- [TypeScript with React](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
+- [可能是你需要的react + typescript 50条规范和经验](https://juejin.im/post/6844903849166110728)
+- [Typescript 进阶 之 重难点梳理](https://juejin.cn/post/6844904100153262087)

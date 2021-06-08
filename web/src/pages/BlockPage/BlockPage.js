@@ -2,6 +2,7 @@ import { Button, Col, Row, Divider } from 'antd'
 import { useState } from 'react'
 import Text from 'src/components/Text'
 import Ellipsis from 'src/components/Ellipsis'
+import Gradient from 'src/components/Gradient'
 import BlogLayout from 'src/layouts/BlogLayout/BlogLayout'
 
 import { PlaceHolder, ItemC, Item } from './styled'
@@ -19,7 +20,12 @@ const BlockPage = () => {
         { url: 'https://codepen.io/wuw/pen/jOyRvRG', title: '字体特效' },
       ],
     },
-    { key: 'gradient', label: 'Gradient - 渐变', com: () => <>gradient</> },
+    {
+      key: 'gradient',
+      label: 'Gradient - 渐变',
+      com: () => <Gradient />,
+      demos: [],
+    },
     {
       key: 'ellipsis',
       label: 'Ellipsis - 省略',
@@ -54,7 +60,9 @@ const BlockPage = () => {
                   <a src={v.url}>
                     <Button type="link">codepen {v.title}</Button>
                   </a>
-                  {i !== ITEM_OBJ[checked].demos.length - 1 && <Divider type="vertical" />}
+                  {i !== ITEM_OBJ[checked].demos.length - 1 && (
+                    <Divider type="vertical" />
+                  )}
                 </section>
               ))}
             </Row>

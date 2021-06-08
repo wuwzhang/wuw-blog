@@ -1,0 +1,359 @@
+@font-face {
+  font-family: Biko;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/biko-black.woff");
+}
+
+.gradient {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+}
+
+.gradient>div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  padding: 5px 7px;
+  overflow: hidden;
+}
+
+/* 故障雪花效果 - start */
+@property --gradient-demo1-length {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0.00085px;
+}
+
+.gradient-demo-1 {
+  background-image: repeating-radial-gradient(circle at 17% 32%,
+      rgb(4, 4, 0),
+      rgb(52, 72, 197),
+      rgb(115, 252, 224),
+      rgb(116, 71, 5),
+      rgb(223, 46, 169),
+      rgb(0, 160, 56),
+      rgb(234, 255, 0) var(--gradient-demo1-length));
+  animation: gradient-demo1-change 2s infinite alternate;
+}
+
+@keyframes gradient-demo1-change {
+  100% {
+    --gradient-demo1-length: 0.0009px;
+  }
+}
+
+/* 故障雪花效果 - end */
+
+/* 鼠标上浮，渐变缓慢变化 - start */
+@property --gradient-demo2-colora {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #fff;
+}
+
+@property --gradient-demo2-colorb {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #000;
+}
+
+.gradient-demo-2 {
+  background: linear-gradient(45deg,
+      var(--gradient-demo2-colora),
+      var(--gradient-demo2-colorb));
+  transition: 1s --gradient-demo2-colora, 1s --gradient-demo2-colorb;
+}
+
+.gradient-demo-2:hover {
+  cursor: pointer;
+
+  --gradient-demo2-colora: #38f;
+  --gradient-demo2-colorb: #3f8;
+}
+
+/* 鼠标上浮，渐变缓慢变化 - end */
+
+@property --gradient-demo3-colorA {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: fuchsia;
+}
+
+@property --gradient-demo3-colorB {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: teal;
+}
+
+@property --gradient-demo3-colorC {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #f79188;
+}
+
+@property --gradient-demo3-colorD {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: yellow;
+}
+
+@property --gradient-demo3-colorE {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: orange;
+}
+
+@property --gradient-demo3-colorF {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: red;
+}
+
+.gradient-demo-3 {
+  background: linear-gradient(45deg,
+      var(--gradient-demo3-colorA),
+      var(--gradient-demo3-colorC),
+      var(--gradient-demo3-colorF));
+  animation: change 10s infinite linear;
+}
+
+@keyframes change {
+  20% {
+    --gradient-demo3-colorA: red;
+    --gradient-demo3-colorC: #a93ee0;
+    --gradient-demo3-colorF: fuchsia;
+  }
+
+  40% {
+    --gradient-demo3-colorA: #ff3c41;
+    --gradient-demo3-colorC: #e228a0;
+    --gradient-demo3-colorF: #2e4c96;
+  }
+
+  60% {
+    --gradient-demo3-colorA: orange;
+    --gradient-demo3-colorC: green;
+    --gradient-demo3-colorF: teal;
+  }
+
+  80% {
+    --gradient-demo3-colorA: #ae63e4;
+    --gradient-demo3-colorC: #0ebeff;
+    --gradient-demo3-colorF: #efc371;
+  }
+}
+
+/* 混合模式叠加不同的图案filter: hue-rotate() - start */
+.gradient-demo-4 div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.gradient-demo-4::before {
+  content: '渐变动态叠加';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  line-height: 200px;
+}
+
+.gradient-demo-4 div:nth-child(1) {
+  background: linear-gradient(238deg,
+      rgb(130, 255, 0) 0%,
+      rgb(0, 84, 166) 100%);
+  animation: gradient-demo4-move 12s infinite linear;
+}
+
+.gradient-demo-4 div:nth-child(2) {
+  background: linear-gradient(238deg, rgb(33, 200, 69) 0%, rgb(0, 0, 100) 100%);
+  mix-blend-mode: overlay;
+  animation: gradient-demo4-move 6s infinite linear;
+}
+
+.gradient-demo-4 div:nth-child(3) {
+  background: linear-gradient(238deg, rgb(200, 255, 255) 48%, rgb(3, 0, 151) 100%);
+  mix-blend-mode: multiply;
+  animation: gradient-demo4-move 6s infinite linear;
+}
+
+.gradient-demo-4 div:nth-child(4) {
+  background: radial-gradient(100% 85% at 0% 100%,
+      rgb(0, 0, 0) 0%,
+      rgb(0, 131, 255) 50%,
+      rgb(255, 0, 0) 100%);
+  mix-blend-mode: difference;
+  animation: gradient-demo4-move 6s infinite linear;
+}
+
+.gradient-demo-4 div:nth-child(5) {
+  background: radial-gradient(100% 225% at 0% 100%,
+      rgb(255, 0, 0) 0%,
+      rgb(66, 255, 0) 100%);
+  mix-blend-mode: difference;
+  animation: gradient-demo4-move 6s infinite linear;
+}
+
+.gradient-demo-4 div:nth-child(6) {
+  background: radial-gradient(100% 140% at 100% 0%,
+      rgb(0, 134, 62) 0%,
+      rgb(0, 239, 255) 50%,
+      rgb(0, 113, 186) 100%);
+  mix-blend-mode: overlay;
+  animation: gradient-demo4-move 6s infinite linear;
+}
+
+@keyframes gradient-demo4-move {
+  0% {
+    filter: unset;
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.gradient-demo-5 {
+  filter: url(#surface);
+}
+
+.gradient-demo-5::after {
+  content: '石灰岩';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  line-height: 200px;
+}
+
+.gradient-demo-6 {
+  line-height: 200px;
+  text-align: center;
+  background: hsl(20, 40%, 90%);
+  background-image:
+    linear-gradient(90deg, #38f 11px, transparent 0),
+    linear-gradient(90deg, #CCCCCC 23px, transparent 0),
+    linear-gradient(90deg, #338 41px, transparent 0),
+    linear-gradient(90deg, #3f8 53px, transparent 0);
+  background-size: 59px 100%, 61px 100%, 83px 100%, 103px 100%;
+}
+
+.gradient-demo-6 div {
+  width: 70%;
+  height: 70%;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .15);
+
+  backdrop-filter: blur(5px);
+}
+
+.gradient-demo-7 {
+  background: repeating-conic-gradient(#ddd, #000, #ddd 30deg);
+}
+
+/* 星空背景 - start */
+.gradient-demo-8 {
+  color: #fff;
+  background-color: black;
+  background-image: radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 10px), radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 15px), radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 10px), radial-gradient(rgba(255, 255, 255, .25), rgba(255, 255, 255, .1) 2px, transparent 15px);
+  background-size: 350px 350px, 300px 300px, 250px 250px, 200px 200px, 150px 150px, 100px 100px;
+  background-position: 0 0, 40px 60px, 130px 270px, 20px 15px, 70px 100px, 35px 10px;
+}
+
+/* 星空背景 - end */
+
+/* 渐变球形缓动背景 -start */
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+@property --perA {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 75%;
+}
+
+@property --perB {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 99%;
+}
+
+@property --perC {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 15%;
+}
+
+@property --perD {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 16%;
+}
+
+@property --perE {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 86%;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.gradient-demo-9 {
+  background-image:
+    radial-gradient(circle at var(--perE) 7%,
+      rgba(40, 40, 40, 0.04) 0%,
+      rgba(40, 40, 40, 0.04) 50%,
+      rgba(200, 200, 200, 0.04) 50%,
+      rgba(200, 200, 200, 0.04) 100%),
+    radial-gradient(circle at var(--perC) var(--perD),
+      rgba(99, 99, 99, 0.04) 0%,
+      rgba(99, 99, 99, 0.04) 50%,
+      rgba(45, 45, 45, 0.04) 50%,
+      rgba(45, 45, 45, 0.04) 100%),
+    radial-gradient(circle at var(--perA) var(--perB),
+      rgba(243, 243, 243, 0.04) 0%,
+      rgba(243, 243, 243, 0.04) 50%,
+      rgba(37, 37, 37, 0.04) 50%,
+      rgba(37, 37, 37, 0.04) 100%),
+    linear-gradient(var(--angle), rgb(34, 222, 237), rgb(135, 89, 215));
+  animation: gradient-demo9-move 30s infinite alternate linear;
+}
+
+@keyframes gradient-demo9-move {
+  100% {
+    --perA: 85%;
+    --perB: 49%;
+    --perC: 45%;
+    --perD: 39%;
+    --perE: 70%;
+    --angle: 360deg;
+  }
+}
+/* 渐变球形缓动背景 - end */
+
+/* mask:linear-gradient start */
+
+/* mask:linear-gradient end */

@@ -5,7 +5,9 @@ const BlogLayout = ({ children }) => {
   return (
     <Layout>
       <Header />
-      <section style={{ height: 'calc(100vh - 60px)' }}>{children}</section>
+      <section style={{ height: 'calc(100vh - 62px)', padding: '12px 0' }}>
+        {children}
+      </section>
     </Layout>
   )
 }
