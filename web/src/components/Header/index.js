@@ -7,7 +7,7 @@ import { Link, routes } from '@redwoodjs/router'
 const Header = () => {
   const path = window.location.pathname
   const ROUTER = [
-    { key: 'home', label: '首页' },
+    // { key: 'home', label: '首页' },
     { key: 'weekly', label: '资讯' },
     { key: 'collect', label: '合集' },
     { key: 'block', label: '物料' },
