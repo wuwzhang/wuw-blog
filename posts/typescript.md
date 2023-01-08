@@ -1,4 +1,5 @@
 - [TypeScript官网](https://www.tslang.cn/docs/home.html)
+- [type challenges](https://github.com/type-challenges/type-challenges)
 - [TypeScript，初次见面，请多指教](https://zhuanlan.zhihu.com/p/57958328)
 - [一文读懂 TypeScript 泛型及应用（ 7.8K字](https://juejin.cn/post/6844904184894980104)
 - [TypeScript Handbook（中文版）](https://www.runoob.com/manual/gitbook/TypeScript/_book/index.html)
